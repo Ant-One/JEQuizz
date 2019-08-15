@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">JEQuizz</string>
-    <string name="greetText">JEQuizz</string>
+
+    <string name="greetText">"Bienvenue à la journée de l’eau 2019 ! Teste tes connaissances sur l’eau et le bien-être et gagne un des prix indiqués ci-dessous!</string>
+    <string name="bullet1">5x 2 entrées pour une visite exclusive du Réservoir d’eau de Tourbillon</string>
+    <string name="bullet2">saillon</string>
+    <string name="bullet3">carafe d’eau de la ville de Sion"</string>
+
     <string name="playbtn">Jouer</string>
     <string name="answer1">answer1</string>
     <string name="answer2">answer2</string>
@@ -15,7 +20,7 @@
     <string name="ans2q1">Faux</string>
     <string name="ansTxtq1">Vrai : L\'eau forme un cycle. L\'eau des lacs, des océans et des glaciers s\'évapore dans le ciel, s\'y condense et crée ainsi les nuages et redescend sur terre sous forme de pluie ou de neige.</string>
 
-    <string name="question2Text">: Quel pourcentage de la surface de la terre est recouverte par les océans ?</string>
+    <string name="question2Text">Quel pourcentage de la surface de la terre est recouverte par les océans ?</string>
     <string name="ans1q2">20%</string>
     <string name="ans2q2">80%</string>
     <string name="ans3q2">70%</string>
@@ -47,8 +52,8 @@
     <string name="question7Text">Quel est le pourcentage d’eau dans un os ? </string>
     <string name="ans1q7">Il n\'y a pas d\'eau dans un os</string>
     <string name="ans2q7">50%</string>
-    <string name="ans3q7">30%</string>
-    <string name="ansTxtq7">30%. Le corps d’un adulte contient environ 65% d’eau ! Mais les os sont une des parties de notre corps a en contenir le moins. Par exemple la peau en contient 70% et les muscles 75% !</string>
+    <string name="ans3q7">22%</string>
+    <string name="ansTxtq7">22%. Le corps d’un adulte contient environ 65% d’eau ! Mais les os sont une des parties de notre corps a en contenir le moins. Par exemple la peau en contient 70% et les muscles 75% !</string>
 
     <string name="question8Text">Boire un verre d’eau le matin booste moins le métabolisme qu’un café</string>
     <string name="ans1q8">Vrai</string>

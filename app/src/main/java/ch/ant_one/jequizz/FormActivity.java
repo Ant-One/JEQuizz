@@ -1,8 +1,10 @@
 package ch.ant_one.jequizz;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -11,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.w3c.dom.Text;
+
+import static java.lang.System.currentTimeMillis;
 
 public class FormActivity extends AppCompatActivity {
 
@@ -25,12 +29,26 @@ public class FormActivity extends AppCompatActivity {
     private Button btnConfirm;
 
     private  int score;
+    private boolean firstPressed = true;
+    private long time = currentTimeMillis();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
+
+        getSupportActionBar().hide();
+
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        decorView.setSystemUiVisibility(uiOptions);
 
         Intent intent = new Intent();
         intent = getIntent();
@@ -77,5 +95,21 @@ public class FormActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+
+        if(currentTimeMillis() - time > 2000)
+            firstPressed = true;
+
+        if(firstPressed){
+            Toast.makeText(FormActivity.this, "Appuyez encore une fois pour quitter l'application",
+                    Toast.LENGTH_LONG).show();
+            firstPressed = false;
+            time = currentTimeMillis();
+        }
+        else
+            finish();
+
     }
 }

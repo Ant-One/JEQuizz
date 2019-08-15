@@ -2,8 +2,11 @@ package ch.ant_one.jequizz;
 
 import android.animation.ValueAnimator;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +15,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import static android.text.Layout.JUSTIFICATION_MODE_INTER_WORD;
 import static android.view.View.GONE;
 
 public class QuestionActivity extends AppCompatActivity {
@@ -22,7 +26,9 @@ public class QuestionActivity extends AppCompatActivity {
     private TextView questionText;
     private TextView answerText;
     private Button nextBtn;
+    private TextView questionNumberIndicator;
 
+    private boolean answered = false;
     private int score = 0;
 
     private int questionNumber;
@@ -30,8 +36,20 @@ public class QuestionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+
+        View decorView = getWindow().getDecorView();
+
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        decorView.setSystemUiVisibility(uiOptions);
+
 
         questionText = (TextView) findViewById(R.id.questionText);
         answerText = (TextView) findViewById(R.id.answerText);
@@ -39,6 +57,7 @@ public class QuestionActivity extends AppCompatActivity {
         answerBtn2 = (Button) findViewById(R.id.answer2);
         answerBtn3 = (Button) findViewById(R.id.answer3);
         nextBtn = (Button) findViewById(R.id.nextBtn);
+        questionNumberIndicator = (TextView) findViewById(R.id.questionNumberIndic);
 
         answerText.setVisibility(View.GONE);
         nextBtn.setVisibility(View.GONE);
@@ -46,9 +65,10 @@ public class QuestionActivity extends AppCompatActivity {
         answerBtn1.setVisibility(View.VISIBLE);
         answerBtn2.setVisibility(View.VISIBLE);
         answerBtn3.setVisibility(View.VISIBLE);
+        questionNumberIndicator.setVisibility(View.VISIBLE);
 
         questionNumber = getIntent().getIntExtra("questionNumber", 1);
-        
+
         showQuestion(questionNumber);
 
         answerBtn1.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +109,19 @@ public class QuestionActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(answered){
+            score--;
+        }
+        if(questionNumber > 1){
+            questionNumber--;
+            showQuestion(questionNumber);
+        }else{
+            finish();
+        }
     }
 
     private void checkAnswer(int questionNumber, int btnNumber) {
@@ -166,6 +199,7 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     private void showAns(int questionNumber) {
+        answered = true;
         questionText.setVisibility(View.GONE);
         answerBtn1.setVisibility(View.GONE);
         answerBtn2.setVisibility(View.GONE);
@@ -179,12 +213,16 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     private void showQuestion(int questionNumber) {
+
+        answered = false;
+
         answerText.setVisibility(View.GONE);
         nextBtn.setVisibility(View.GONE);
         questionText.setVisibility(View.VISIBLE);
         answerBtn1.setVisibility(View.VISIBLE);
         answerBtn2.setVisibility(View.VISIBLE);
         answerBtn3.setVisibility(View.VISIBLE);
+        questionNumberIndicator.setText("Question " + String.valueOf(questionNumber));
 
         switch (questionNumber){
             case 1:
