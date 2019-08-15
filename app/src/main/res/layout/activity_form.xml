@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FormActivity">
+
+        <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textEndQuizz"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:text="@string/textEndQuizz"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="395dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="0dp" />
+
+            <EditText
+                android:id="@+id/editName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:ems="10"
+                android:hint="Nom"
+                android:inputType="textPersonName"
+                tools:layout_conversion_absoluteHeight="45dp"
+                tools:layout_conversion_absoluteWidth="387dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="107dp" />
+
+            <EditText
+                android:id="@+id/editSurname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:ems="10"
+                android:hint="Prénom"
+                android:inputType="textPersonName"
+                tools:layout_conversion_absoluteHeight="45dp"
+                tools:layout_conversion_absoluteWidth="387dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="208dp" />
+
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:ems="10"
+                android:hint="Adresse email"
+                android:inputType="textEmailAddress"
+                tools:layout_conversion_absoluteHeight="45dp"
+                tools:layout_conversion_absoluteWidth="395dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="289dp" />
+
+            <EditText
+                android:id="@+id/editPhone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:ems="10"
+                android:hint="Numéro de téléphone"
+                android:inputType="phone"
+                tools:layout_conversion_absoluteHeight="45dp"
+                tools:layout_conversion_absoluteWidth="395dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="394dp" />
+
+            <EditText
+                android:id="@+id/editPlace"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:ems="10"
+                android:hint="Localité"
+                android:inputType="textPersonName"
+                tools:layout_conversion_absoluteHeight="45dp"
+                tools:layout_conversion_absoluteWidth="395dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="479dp" />
+
+            <TextView
+                android:id="@+id/textEULA"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:text="@string/EULA"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="395dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="524dp" />
+
+            <CheckBox
+                android:id="@+id/checkEULA"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:text="@string/checkEULA" />
+
+            <Button
+                android:id="@+id/btnConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:text="Envoyer"
+                tools:layout_conversion_absoluteHeight="48dp"
+                tools:layout_conversion_absoluteWidth="395dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="543dp" />
+
+    </LinearLayout>
+    </ScrollView>

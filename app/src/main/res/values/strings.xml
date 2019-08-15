@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">JEQuizz</string>
+    <string name="greetText">JEQuizz</string>
+    <string name="playbtn">Jouer</string>
+    <string name="answer1">answer1</string>
+    <string name="answer2">answer2</string>
+    <string name="answer3">answer3</string>
+    <string name="questionText">questionText</string>
+    <string name="answerText">answer</string>
+    <string name="nextBtn">Question suivante</string>
+    <string name="btnEnd">Terminer</string>
+
+    <string name="question1Text">L’eau qui sort de votre robinet est probablement la même eau qu’un dinosaure a bu.</string>
+    <string name="ans1q1">Vrai</string>
+    <string name="ans2q1">Faux</string>
+    <string name="ansTxtq1">Vrai : L\'eau forme un cycle. L\'eau des lacs, des océans et des glaciers s\'évapore dans le ciel, s\'y condense et crée ainsi les nuages et redescend sur terre sous forme de pluie ou de neige.</string>
+
+    <string name="question2Text">: Quel pourcentage de la surface de la terre est recouverte par les océans ?</string>
+    <string name="ans1q2">20%</string>
+    <string name="ans2q2">80%</string>
+    <string name="ans3q2">70%</string>
+    <string name="ansTxtq2">70%, c’est pourquoi la terre est appelée la planète bleue.</string>
+
+    <string name="question3Text">Sous quelle forme peut-on trouver l’eau ? </string>
+    <string name="ans1q3">Liquide et solide</string>
+    <string name="ans2q3">Liquide</string>
+    <string name="ans3q3">Liquide, solide et gazeuse</string>
+    <string name="ansTxtq3">solide, liquide, gazeuse. La forme liquide est la forme de base de l\'eau, elle est solide sous forme de glaçons et gazeuse lorsqu\'il s\'agit de la vapeur. L\'eau est la seule liaison chimique présente sous trois formes sur la terre.</string>
+
+    <string name="question4Text">Lequel de ces fruits contient-il le plus d\'eau ? </string>
+    <string name="ans1q4">la tomate</string>
+    <string name="ans2q4">la pastèque</string>
+    <string name="ans3q4">la fraise</string>
+    <string name="ansTxtq4">Il s\'agit de la tomate. En effet, la tomate contient plus de 94% d’eau, contre 91% pour la pastèque et 90% pour les fraises.</string>
+
+    <string name="question5Text">En plaine, l\'eau bout à 100 degrés alors qu\'en altitude, la température d\'ébullition est plus basse. </string>
+    <string name="ans1q5">Vrai</string>
+    <string name="ans2q5">Faux</string>
+    <string name="ansTxtq5">C\'est vrai à cause de la pression l\’eau bout à 100 degrés. Pour chaque palier de 300 mètres d\’altitude, l\’eau bout à un degré de moins !</string>
+
+    <string name="question6Text">La ville de Mawsynram en Inde est le ville où il pleut le plus par an ! Quelle quantité en millimètres ? </string>
+    <string name="ans1q6">4\'000 mm/an</string>
+    <string name="ans2q6">11\'000 mm/an</string>
+    <string name="ans3q6">50\'000 mm/an</string>
+    <string name="ansTxtq6">11 000 millimètres par an !</string>
+
+    <string name="question7Text">Quel est le pourcentage d’eau dans un os ? </string>
+    <string name="ans1q7">Il n\'y a pas d\'eau dans un os</string>
+    <string name="ans2q7">50%</string>
+    <string name="ans3q7">30%</string>
+    <string name="ansTxtq7">30%. Le corps d’un adulte contient environ 65% d’eau ! Mais les os sont une des parties de notre corps a en contenir le moins. Par exemple la peau en contient 70% et les muscles 75% !</string>
+
+    <string name="question8Text">Boire un verre d’eau le matin booste moins le métabolisme qu’un café</string>
+    <string name="ans1q8">Vrai</string>
+    <string name="ans2q8">Faux</string>
+    <string name="ansTxtq8">Faux, un verre d’eau froide réveille les organes internes. La position allongée favorise l’accumulation de toxines dans l’organisme. Boire un verre d’eau aide à chasser les toxines et les acides accumulés dans l’estomac et les intestins durant la nuit. </string>
+
+    <string name="question9Text">La méduse est l\'animal le plus “liquide”. À combien de pourcent d\'eau est-elle composée ?</string>
+    <string name="ans1q9">40%</string>
+    <string name="ans2q9">60%</string>
+    <string name="ans3q9">98%</string>
+    <string name="ansTxtq9">98%, les 2 pourcents restants sont des protéines</string>
+
+    <string name="question10Text">Le Valais est un grand producteur de l’énergie hydraulique en Suisse. Combien de pourcent en produit-il ? </string>
+    <string name="ans1q10">70%</string>
+    <string name="ans2q10">30%</string>
+    <string name="ans3q10">50%</string>
+    <string name="ansTxtq10">30%, 60% de l’énergie hydraulique suisse provient des cantons alpins tel que le Valais, le Tessin, Uri et les Grisons.</string>
+    <string name="textEndQuizz">endQuizz</string>
+    <string name="EULA">EULA</string>
+    <string name="checkEULA">J\'accepte les conditions de participations</string>
+
+</resources>
