@@ -16,6 +16,8 @@ import java.io.FileWriter;
 
 import com.opencsv.CSVWriter;
 
+import org.w3c.dom.Text;
+
 import static java.lang.System.currentTimeMillis;
 
 public class FormActivity extends AppCompatActivity {
@@ -29,6 +31,7 @@ public class FormActivity extends AppCompatActivity {
     private CheckBox checkEULA;
     private TextView textEULA;
     private Button btnConfirm;
+    private TextView scoreText;
 
     private  int score;
     private boolean firstPressed = true;
@@ -65,6 +68,9 @@ public class FormActivity extends AppCompatActivity {
         checkEULA = (CheckBox) findViewById(R.id.checkEULA);
         textEULA = (TextView) findViewById(R.id.textEULA);
         btnConfirm = (Button) findViewById(R.id.btnConfirm);
+        scoreText = (TextView) findViewById(R.id.scoreText);
+
+        scoreText.setText(getText(R.string.scoreText) + " " + String.valueOf(score) + "/10");
 
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,7 +116,7 @@ public class FormActivity extends AppCompatActivity {
                             writer = new CSVWriter(new FileWriter(filePath));
                         }
 
-                    String[] data = {editName.getText().toString(), editSurname.getText().toString(), editEmail.getText().toString(), editPlace.getText().toString(), editPlace.getText().toString(), String.valueOf(score)};
+                    String[] data = {editName.getText().toString(), editSurname.getText().toString(), editEmail.getText().toString(), editPlace.getText().toString(), editPlace.getText().toString(), String.valueOf(score), Boolean.valueOf(checkEULA.isChecked()).toString()};
 
                     writer.writeNext(data);
 
