@@ -88,7 +88,7 @@ public class FormActivity extends AppCompatActivity {
                     checkEULA.setError("Vous devez accepter les conditions de participation pour continuer");
                 }
                 else {
-                    Toast.makeText(FormActivity.this, "Fait",
+                    Toast.makeText(FormActivity.this, "Merci de votre participation",
                             Toast.LENGTH_LONG).show();
 
                     String baseDir = android.os.Environment.getExternalStorageDirectory().getAbsolutePath();

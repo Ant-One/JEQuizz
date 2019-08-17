@@ -13,12 +13,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import static java.lang.System.currentTimeMillis;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button playBtn;
     private TextView textGreet;
+    private TextView textPrizes;
     private boolean firstPressed = true;
     private long time = currentTimeMillis();
 
@@ -42,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         playBtn = (Button) findViewById(R.id.playButton);
         textGreet = (TextView) findViewById(R.id.greetingText);
-        CharSequence title = new String();
-        title = getText(R.string.greetText);
+        textPrizes = (TextView) findViewById(R.id.prizesText);
 
         CharSequence t1 = getText(R.string.bullet1);
         SpannableString s1 = new SpannableString(t1);
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         SpannableString s3 = new SpannableString(t3);
         s3.setSpan(new BulletSpan(15), 0, t3.length(), 0);
 
-        textGreet.setText(TextUtils.concat(title, "\n\n", s1, "\n", s2, "\n", s3));
+        textPrizes.setText(TextUtils.concat("\n\n", s1, "\n", s2, "\n", s3));
 
 
         playBtn.setOnClickListener(new View.OnClickListener() {

@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">JEQuizz</string>
 
-    <string name="greetText">"Bienvenue à la journée de l’eau 2019 ! Teste tes connaissances sur l’eau et le bien-être et gagne un des prix indiqués ci-dessous!</string>
-    <string name="bullet1">5x 2 entrées pour une visite exclusive du Réservoir d’eau de Tourbillon</string>
-    <string name="bullet2">saillon</string>
-    <string name="bullet3">carafe d’eau de la ville de Sion"</string>
+    <string name="greetText">"Bienvenue à la journée de l’eau 2019 ! \n\nTeste tes connaissances sur l’eau et le bien-être et gagne l\'un des prix indiqués ci-dessous!</string>
+    <string name="bullet1">5x 2 entrées pour une visite exclusive du Réservoir d’eau de Tourbillon\n</string>
+    <string name="bullet2">5x 1 carafe d\'eau de la ville de Sion édition 2019\n</string>
+    <string name="bullet3">5x 1 entrée enfant aux Bains de Saillon</string>
 
     <string name="playbtn">Jouer</string>
     <string name="answer1">answer1</string>
