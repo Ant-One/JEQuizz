@@ -2,9 +2,8 @@ package ch.ant_one.jequizz;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -12,7 +11,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import java.io.File;
+import java.io.FileWriter;
+
+import com.opencsv.CSVWriter;
 
 import static java.lang.System.currentTimeMillis;
 
@@ -89,7 +91,34 @@ public class FormActivity extends AppCompatActivity {
                     Toast.makeText(FormActivity.this, "Fait",
                             Toast.LENGTH_LONG).show();
 
-                    //TODO LOGIQUE DE SAUVEGARDE
+                    String baseDir = android.os.Environment.getExternalStorageDirectory().getAbsolutePath();
+                    String fileName = "Scores_JE_Quizz.csv";
+                    String filePath = baseDir + File.separator + fileName;
+                    FileWriter fileWriter;
+                    File f = new File(filePath);
+                    CSVWriter writer;
+
+                    try{
+                        // File exist
+                        if(f.exists()&&!f.isDirectory())
+                        {
+                            fileWriter = new FileWriter(filePath, true);
+                            writer = new CSVWriter(fileWriter);
+                        }
+                        else
+                        {
+                            writer = new CSVWriter(new FileWriter(filePath));
+                        }
+
+                    String[] data = {editName.getText().toString(), editSurname.getText().toString(), editEmail.getText().toString(), editPlace.getText().toString(), editPlace.getText().toString(), String.valueOf(score)};
+
+                    writer.writeNext(data);
+
+                    writer.close();}
+                    catch (Exception e){
+                        Toast.makeText(FormActivity.this, ""+e.toString(),
+                                Toast.LENGTH_LONG).show();
+                    }
 
                     finish();
                 }
