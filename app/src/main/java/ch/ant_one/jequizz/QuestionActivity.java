@@ -1,7 +1,10 @@
 package ch.ant_one.jequizz;
 
 import android.animation.ValueAnimator;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.UriMatcher;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +13,8 @@ import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
 
@@ -27,8 +32,11 @@ public class QuestionActivity extends AppCompatActivity {
     private TextView answerText;
     private Button nextBtn;
     private TextView questionNumberIndicator;
+    private ImageView validShow;
+    private ImageButton retryBtn;
 
     private boolean answered = false;
+    private boolean isCorrect = false;
     private int score = 0;
 
     private int questionNumber;
@@ -58,6 +66,8 @@ public class QuestionActivity extends AppCompatActivity {
         answerBtn3 = (Button) findViewById(R.id.answer3);
         nextBtn = (Button) findViewById(R.id.nextBtn);
         questionNumberIndicator = (TextView) findViewById(R.id.questionNumberIndic);
+        validShow = (ImageView) findViewById(R.id.validShow);
+        retryBtn = (ImageButton) findViewById(R.id.retryBtn);
 
         answerText.setVisibility(View.GONE);
         nextBtn.setVisibility(View.GONE);
@@ -66,6 +76,7 @@ public class QuestionActivity extends AppCompatActivity {
         answerBtn2.setVisibility(View.VISIBLE);
         answerBtn3.setVisibility(View.VISIBLE);
         questionNumberIndicator.setVisibility(View.VISIBLE);
+        validShow.setVisibility(GONE);
 
         questionNumber = getIntent().getIntExtra("questionNumber", 1);
 
@@ -87,6 +98,38 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 checkAnswer(questionNumber, 3);
+            }
+        });
+
+        retryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(QuestionActivity.this)
+                        .setTitle("Recommencer le quizz ?")
+                        .setMessage("Êtes-vous sûr de vouloir recommencer le quizz à zéro ?\nToute progression sera perdue")
+
+                        .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        })
+
+                        .setNegativeButton("Non", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                View decorView = getWindow().getDecorView();
+
+                                int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+                                decorView.setSystemUiVisibility(uiOptions);
+                            }
+                        })
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();
             }
         });
 
@@ -123,12 +166,27 @@ public class QuestionActivity extends AppCompatActivity {
             finish();
         }
     }
+    @Override
+    protected void onResume() {
+        View decorView = getWindow().getDecorView();
+
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        decorView.setSystemUiVisibility(uiOptions);
+        super.onResume();
+    }
 
     private void checkAnswer(int questionNumber, int btnNumber) {
         switch (questionNumber){
             case 1:
                 if(btnNumber == 1){
                     score += 1;
+                    isCorrect = true;
+
                 }
                 showAns(questionNumber);
                 break;
@@ -136,6 +194,7 @@ public class QuestionActivity extends AppCompatActivity {
             case 2:
                 if(btnNumber == 3){
                     score += 1;
+                    isCorrect = true;
                 }
                 showAns(questionNumber);
                 break;
@@ -143,6 +202,7 @@ public class QuestionActivity extends AppCompatActivity {
             case 3:
                 if(btnNumber == 3){
                     score += 1;
+                    isCorrect = true;
                 }
                 showAns(questionNumber);
                 break;
@@ -150,6 +210,7 @@ public class QuestionActivity extends AppCompatActivity {
             case 4:
                 if(btnNumber == 1){
                     score += 1;
+                    isCorrect = true;
                 }
                 showAns(questionNumber);
                 break;
@@ -157,6 +218,7 @@ public class QuestionActivity extends AppCompatActivity {
             case 5:
                 if(btnNumber == 1){
                     score += 1;
+                    isCorrect = true;
                 }
                 showAns(questionNumber);
                 break;
@@ -164,6 +226,7 @@ public class QuestionActivity extends AppCompatActivity {
             case 6:
                 if(btnNumber == 2){
                     score += 1;
+                    isCorrect = true;
                 }
                 showAns(questionNumber);
                 break;
@@ -171,6 +234,7 @@ public class QuestionActivity extends AppCompatActivity {
             case 7:
                 if(btnNumber == 3){
                     score += 1;
+                    isCorrect = true;
                 }
                 showAns(questionNumber);
                 break;
@@ -178,6 +242,7 @@ public class QuestionActivity extends AppCompatActivity {
             case 8:
                 if(btnNumber == 2){
                     score += 1;
+                    isCorrect = true;
                 }
                 showAns(questionNumber);
                 break;
@@ -185,6 +250,7 @@ public class QuestionActivity extends AppCompatActivity {
             case 9:
                 if(btnNumber == 3){
                     score += 1;
+                    isCorrect = true;
                 }
                 showAns(questionNumber);
                 break;
@@ -192,6 +258,7 @@ public class QuestionActivity extends AppCompatActivity {
             case 10:
                 if(btnNumber == 2){
                     score += 1;
+                    isCorrect = true;
                 }
                 showAns(questionNumber);
                 break;
@@ -205,16 +272,25 @@ public class QuestionActivity extends AppCompatActivity {
         answerBtn2.setVisibility(View.GONE);
         answerBtn3.setVisibility(View.GONE);
         answerText.setVisibility(View.VISIBLE);
+        validShow.setVisibility(View.VISIBLE);
         if(questionNumber == 10){
             nextBtn.setText(getString(R.string.btnEnd));
         }
         nextBtn.setVisibility(View.VISIBLE);
+
+        if(isCorrect){
+            validShow.setImageResource(R.drawable.baseline_done_24);
+        }else{
+            validShow.setImageResource(R.drawable.baseline_clear_24);
+        }
+        validShow.setVisibility(View.VISIBLE);
 
     }
 
     private void showQuestion(int questionNumber) {
 
         answered = false;
+        isCorrect = false;
 
         answerText.setVisibility(View.GONE);
         nextBtn.setVisibility(View.GONE);
@@ -222,6 +298,7 @@ public class QuestionActivity extends AppCompatActivity {
         answerBtn1.setVisibility(View.VISIBLE);
         answerBtn2.setVisibility(View.VISIBLE);
         answerBtn3.setVisibility(View.VISIBLE);
+        validShow.setVisibility(View.INVISIBLE);
         questionNumberIndicator.setText("Question " + String.valueOf(questionNumber));
 
         switch (questionNumber){

@@ -30,7 +30,7 @@
     <string name="ans1q3">Liquide et solide</string>
     <string name="ans2q3">Liquide</string>
     <string name="ans3q3">Liquide, solide et gazeuse</string>
-    <string name="ansTxtq3">solide, liquide, gazeuse. La forme liquide est la forme de base de l\'eau, elle est solide sous forme de glaçons et gazeuse lorsqu\'il s\'agit de la vapeur. L\'eau est la seule liaison chimique présente sous trois formes sur la terre.</string>
+    <string name="ansTxtq3">Solide, liquide, gazeuse. La forme liquide est la forme de base de l\'eau, elle est solide sous forme de glaçons et gazeuse lorsqu\'il s\'agit de la vapeur. L\'eau est la seule liaison chimique présente sous trois formes sur la terre.</string>
 
     <string name="question4Text">Lequel de ces fruits contient-il le plus d\'eau ? </string>
     <string name="ans1q4">la tomate</string>

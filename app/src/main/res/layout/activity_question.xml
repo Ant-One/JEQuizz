@@ -112,12 +112,38 @@
         android:id="@+id/questionNumberIndic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="170dp"
         android:text="TextView"
         android:textColor="#8EB4E4"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/validShow"
+        android:layout_width="273dp"
+        android:layout_height="270dp"
+        android:layout_marginTop="8dp"
+        android:tint="#03A9F4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_done_24" />
+
+    <ImageButton
+        android:id="@+id/retryBtn"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="106dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        android:tint="#8EB4E4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_refresh_24" />
 
 </android.support.constraint.ConstraintLayout>
